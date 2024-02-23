@@ -35,6 +35,7 @@
                                         <td>{{ $b->tahun_terbit }}</td>
                                       <td>
                                         <form action ="{{route('buku.destroy', $b->id)}}" method="POST">
+                                            
                                             @csrf 
                                             @method('delete')
 

@@ -32,6 +32,11 @@ Route::get('/peminjaman/tambah', [PeminjamanController::class, 'tambahPeminjaman
 Route::post('/peminjaman/store', [PeminjamanController::class, 'storePeminjaman'])->name('peminjaman.store');
 Route::post('/peminjaman/selesai/{id}', [PeminjamanController::class, 'kembalikanBuku'])->name('peminjaman.kembalikan');
 Route::post('/buku/store', [BukuController::class, 'store'])->name('buku.store');
+Route::get('/buku/edit/{id}', [BukuController::class, 'edit'])->name('buku.edit');
+Route::patch('/buku/update/{id}', [BukuController::class, 'update'])->name('buku.update');
+Route::get('/kategori/edit/{id}',[KategoriController::class, 'edit'])->name('kategori.edit');
+Route::post('/kategori/update/{id}',[KategoriController::class, 'update'])->name('kategori.update');
+Route::get('/report', [PeminjamanController::class, 'print'])->name('print'); 
 });
 Auth::routes();
 

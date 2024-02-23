@@ -32,11 +32,20 @@
                                                 @csrf 
                                                 @method('DELETE')
 
-                                                <button class="btn btn-danger" type="submit">
-                                                    <i class="fa fa-trash"></i>
+                                                <button class="btn btn-primary" type="submit">
+                 
+                                                <i class="fa fa-trash-alt"></i>
 </button>
+<a href="{{ route('kategori.edit', $k->id) }}" class="btn btn-primary">
+<i class="fa fa-edit"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                              
+                             
 </form>
 </td>
+
                                     </tr>
                                 @empty
                                     <tr>
