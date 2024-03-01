@@ -38,6 +38,10 @@
                                 <input type="number" name="tahun_terbit" class="form-control" required>
                             </div>
 
+                            <div class = "mb-4">
+                                <label for="foto" class="block text-sm font-medium text-gray-700">Foto Buku:</label>
+                                <input type="file" name="foto" accept="image/*" class="mt-1 p-2 border border-gray-300 rounded-md"required>
+</div>
                             <div class="mb-4">
                                 <label for="kategori_id" class="form-label">Kategori:</label>
                                 <select name="kategori_id" class="form-control" required>

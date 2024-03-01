@@ -14,11 +14,11 @@
                         @endif
 
                         <div class="mb-4">
-                            <a href="{{route('peminjaman.tambah')}}" class="btn btn-primary">
+                            <a href="{{route('peminjaman.tambah')}}" class="btn btn-dark">
                                 + Tambah Data Peminjaman
                             </a>
                             <td></td>
-                            <a  href="{{ route('print') }}" class="btn btn-primary">
+                            <a  href="{{ route('print') }}" class="btn btn-dark">
                                 <i class="fa fa-download"></i> Ekspor PDF</a>
                         </div>
 
@@ -45,7 +45,7 @@
                                             @if($p->status === 'Dipinjam')
                                                 <form action="{{ route('peminjaman.kembalikan', $p->id) }}" method="post">
                                                     @csrf
-                                                    <button type="submit" class="btn btn-primary">Kembalikan</button>
+                                                    <button type="submit" class="btn btn-dark">Kembalikan</button>
                                                 </form>
                                             @else
                                                 -

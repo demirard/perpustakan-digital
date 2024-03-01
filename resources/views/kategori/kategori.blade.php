@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="mb-4">
-                            <a href="{{ route('kategori.create') }}" class="btn btn-primary">
+                            <a href="{{ route('kategori.create') }}" class="btn btn-dark">
                                 + Tambah Data Kategori
                             </a>
                         </div>
@@ -32,11 +32,11 @@
                                                 @csrf 
                                                 @method('DELETE')
 
-                                                <button class="btn btn-primary" type="submit">
+                                                <button class="btn btn-dark" type="submit">
                  
                                                 <i class="fa fa-trash-alt"></i>
 </button>
-<a href="{{ route('kategori.edit', $k->id) }}" class="btn btn-primary">
+<a href="{{ route('kategori.edit', $k->id) }}" class="btn btn-dark">
 <i class="fa fa-edit"></i>
                                             </a>
                                         </td>
