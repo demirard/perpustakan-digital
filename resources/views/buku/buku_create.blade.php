@@ -32,6 +32,10 @@
                                 <label for="penerbit" class="form-label">Penerbit:</label>
                                 <input type="text" name="penerbit" class="form-control" required>
                             </div>
+                            <div class="mb-4">
+                            <label for="Deskripsi" class="block text-smfont-medium-text-gray-700">sinopsis:</label>
+                        <textarea name="Deskripsi" class="mt-1 p-2 border border-gray-300 rounded-md" required></textarea>
+</div>
 
                             <div class="mb-4">
                                 <label for="tahun_terbit" class="form-label">Tahun Terbit:</label>

@@ -22,6 +22,7 @@
                                     <th>Penulis</th>
                                     <th>Penerbit</th>
                                     <th>Tahun Terbit</th>
+                                    <th>Deskripsi</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -35,17 +36,19 @@
                                         <td>{{ $b->penulis }}</td>
                                         <td>{{ $b->penerbit }}</td>
                                         <td>{{ $b->tahun_terbit }}</td>
+                                        <td>{{ $b->Deskripsi}}</td>
                                       <td>
                                         <form action ="{{route('buku.destroy', $b->id)}}" method="POST">
                                             
                                             @csrf 
                                             @method('delete')
 
-                                            <button class="btn btn-primary" type="submit">
+                                            <button class="btn btn-dark" type="submit">
                                                 <i class="fa fa-trash-alt"></i>
+                                                
 </button>
-<button class="btn btn-primary" type="submit">
-    <i class="fa fa-edit"></i>
+<a href="{{ route('buku.edit', $b->id) }}" class="btn btn-dark">
+<i class="fa fa-edit"></i>
 </button>
 </form>
                             

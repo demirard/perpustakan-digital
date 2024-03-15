@@ -16,9 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [BukuController::class, 'welcome'] );
-Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::middleware('auth')->group(function () {
+
+Auth::routes();
+Route::middleware(['auth', 'role:admin'])->group(function () {
+
+
 Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
 Route::get('/kategori/tambah', [KategoriController::class,'create'])->name('kategori.create');
 Route::post('/kategori/store', [KategoriController::class, 'store'])->name('kategori.store');
@@ -33,11 +37,12 @@ Route::post('/peminjaman/store', [PeminjamanController::class, 'storePeminjaman'
 Route::post('/peminjaman/selesai/{id}', [PeminjamanController::class, 'kembalikanBuku'])->name('peminjaman.kembalikan');
 Route::post('/buku/store', [BukuController::class, 'store'])->name('buku.store');
 Route::get('/buku/edit/{id}', [BukuController::class, 'edit'])->name('buku.edit');
-Route::patch('/buku/update/{id}', [BukuController::class, 'update'])->name('buku.update');
+Route::put('/buku/update/{id}', [BukuController::class, 'update'])->name('buku.update');
 Route::get('/kategori/edit/{id}',[KategoriController::class, 'edit'])->name('kategori.edit');
 Route::post('/kategori/update/{id}',[KategoriController::class, 'update'])->name('kategori.update');
 Route::get('/report', [PeminjamanController::class, 'print'])->name('print'); 
 });
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/user/peminjaman', [PeminjamanController::class, 'userPeminjaman'])->name('peminjaman.user')
+->middleware(['auth', 'role:user']);
+Route::get('/buku/detail/{id}',[BukuController::class, 'show'])->name('buku.show');

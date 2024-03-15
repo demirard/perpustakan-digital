@@ -10,7 +10,6 @@ class Peminjaman extends Model
     use HasFactory;
 
     protected $table = 'peminjaman';
-
     protected $fillable = [
         'user_id',
         'buku_id',

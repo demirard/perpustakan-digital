@@ -56,7 +56,7 @@
                 Interface
             </div>
 
-
+@role('admin')
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
@@ -86,8 +86,8 @@
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
+@endrole
 
-           
         </ul>
         <!-- End of Sidebar -->
 
